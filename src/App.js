@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 function App() {
   let json = require("./data.json");
-
-  const [state, setState] = useState(json);
 
   useEffect(() => {
     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -36,7 +34,7 @@ function App() {
   }
 
   function processData() {
-    let rows = state.row.map((item) => {
+    let rows = json.row.map((item) => {
       let level = item.level;
 
       let divs = item.locations.map((location) => {
